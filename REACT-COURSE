@@ -1,0 +1,139 @@
+(JSX) JavaScript HTML
+
+npm install -g create-react-app
+create-react-app <app-name>
+
+BOOTSTRAP-> npm install bootstrap. (import "bootstrap/dist/css/bootstrap.min.css") in App.js
+
+npm install react-router-dom
+
+COMMENTS {
+	  		//
+		 }
+
+FONT AWESOME in Index.html  (copy all <Link>)
+
+----------------REDUX ---------------------------------------------------------------------------------------------------------------------------------------
+
+npm i redux react-redux redux-thunk
+
+store.js
+
+import {creteStore, applyMiddleware, compose} from "redux"
+import thunk from "redux-thunk"
+import rootReducer from "./reducers"
+
+const initialState = {}
+const middleware = [thunk]
+
+let store;
+
+f(window.navigator.userAgent.includes("Chrome"){
+	store = createStore(rotReducer, initialState, compose(applyMiddleware(...middleware), <COPY-LINK>));
+}else{
+	store = createStore(rotReducer, initialState, compose(applyMiddleware(...middleware)));
+}
+
+export default store;
+
+	-------------------------------------
+
+reducers (folder)
+	index.js
+		import {combineReducerss} from "redux";
+
+		export default combineReducers({
+
+		});
+
+
+----------------ROUTER & REDUX-------------------------------------------------------------------------------------------------------------------------
+
+
+App.js (file)
+	import {BrowserRouter as Router, Route} from "react-router-dom";  
+	import {Provider} from "react-redux";
+	import {store} from "./store";
+
+	class App extende Component{
+		render(){
+			return (
+				<Provider store={store}>
+					<Router>
+
+						<div className="App">
+							<h1>My App.</h1>
+							<Header />
+							<Route exact path="/dashboard" component={Dashboad} />
+							<Route exact path="/projectList" component={ProjectList} /> 
+						</div>
+
+					</Router>
+				</Provider>
+			);
+		}
+	}
+	export default App;
+
+----------------FUNCTIONAL COMPONENT with REACT.FRAGMENT---------------------------------------------------------------------------------------------------------
+
+	const CreateButton = () =>{
+		render(){
+			return (
+				<React.Fragment>
+					<Link to="/addProjec" clasName="">Create</Link>
+				</React.Fragment>
+			);
+		}
+	}
+	export default CreateButton;
+
+----------------FORM---------------------------------------------------------------------------------------------------------------------------------------
+
+class CreateProject extend Component {
+	
+	constructor(){
+		super();
+
+		this.state:Project = {
+		id="",
+		name="",
+		date=""
+		};
+
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.Submit.bind(this);
+	}
+
+	render(){
+		return (
+
+			<div>
+				<form onSubmit={this.onSubmit}>
+					<div className="form-group">
+						<input type="text" className="form-control" placeholder="id" name="id" value="{this.state.id} onChange={this.onChange}/>
+						<input type="text" className="form-control" placeholder="name" name="name" value="{this.state.name} onChange={this.onChange}/>
+						<input type="date" className="form-control" name="date" value="{this.state.date} onChange={this.onChange}/>
+						<buton type="submit" className="btn btn-primary">Submit</Buton>
+						<Link to="/dashboard" className="btn btn-primary">Cancel</Buton>
+					</div>
+				</form>
+			</div>
+
+		);
+	}
+
+	onChange(e){
+		this.setState({ [e.target.name] : e.target.value });
+	}
+
+	onSubmit(e){
+		e.preventDefault();
+		const newProject = {
+			id : this.state.id,
+			name : this.state.name,
+			date : this.state.date
+		};
+	}
+
+}
