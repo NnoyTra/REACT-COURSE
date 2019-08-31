@@ -4,34 +4,26 @@ import { NavLink } from "react-router-dom";
 class Navbar extends Component {
     render() {
         return (
-            <div>
+            <div className="my-navbar">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <NavLink className="navbar-brand" to="#">Home</NavLink>
+                    <NavLink className="navbar-brand" to="/home">Home</NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/hotels">Hotels <span className="sr-only">(current)</span></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/reservations">Link</NavLink>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dropdown
-                                 </NavLink>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <NavLink className="dropdown-item" to="#">Action</NavLink>
-                                    <NavLink className="dropdown-item" to="#">Another action</NavLink>
-                                    <div className="dropdown-divider"></div>
-                                    <NavLink className="dropdown-item" to="#">Something else here</NavLink>
-                                </div>
+                                <NavLink className="nav-link" to="/reservations">Reservations</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link disabled" to="#">Disabled</NavLink>
+                                <NavLink className="nav-link" to="/hotelForm">Create Hotel</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/aboutus">About Us</NavLink>
                             </li>
                         </ul>
 
