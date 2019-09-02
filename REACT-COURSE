@@ -6,6 +6,7 @@ create-react-app <app-name>
 BOOTSTRAP-> npm install bootstrap. (import "bootstrap/dist/css/bootstrap.min.css") in App.js
 
 npm install react-router-dom
+npm install axios
 
 COMMENTS {
 	  		//
